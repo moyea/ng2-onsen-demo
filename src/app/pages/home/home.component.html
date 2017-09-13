@@ -1,0 +1,60 @@
+<ons-toolbar>
+  <div class="left">
+    <ons-toolbar-button (click)="prev()">
+      <ons-icon icon="md-chevron-left"></ons-icon>
+    </ons-toolbar-button>
+  </div>
+  <div class="center">首页</div>
+  <div class="right">
+    <ons-toolbar-button (click)="next()">
+      <ons-icon icon="md-chevron-right"></ons-icon>
+    </ons-toolbar-button>
+  </div>
+</ons-toolbar>
+<ons-carousel #carousel fullscreen swipeable auto-scroll overscrollable id="carousel">
+  <ons-carousel-item>
+    <div>
+      <ons-button (click)="goMine()">Click</ons-button>
+    </div>
+  </ons-carousel-item>
+  <ons-carousel-item>
+    <ons-button (click)="customDialog.show()">Show Custom Dialog</ons-button>
+    <ons-dialog animation="default" cancelable="" #customDialog>
+      <div class="dialog-mask"></div>
+      <div class="dialog">
+        <div class="dialog-container">
+          <ons-page>
+            <ons-toolbar>
+              <div class="center">提示</div>
+            </ons-toolbar>
+            <div class="content">
+              <div style="text-align: center;">
+                <p></p>
+                <ons-button (click)="customDialog.hide()">Close</ons-button>
+              </div>
+            </div>
+          </ons-page>
+        </div>
+      </div>
+    </ons-dialog>
+    <ons-button (click)="alert.show()">Show Alert Dialog</ons-button>
+    <ons-alert-dialog cancelable #alert>
+      <div class="alert-dialog-title">
+        Warning!
+      </div>
+      <div class="alert-dialog-content">
+
+      </div>
+      <div class="alert-dialog-footer">
+        <ons-button class="alert-dialog-button" (click)="alert.hide()">Ok</ons-button>
+      </div>
+    </ons-alert-dialog>
+    <ons-button (click)="confirm()">Confirm</ons-button>
+  </ons-carousel-item>
+  <ons-carousel-item>
+    <div>Three</div>
+  </ons-carousel-item>
+  <ons-carousel-item>
+    <div>Four</div>
+  </ons-carousel-item>
+</ons-carousel>
